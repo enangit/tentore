@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/Tentore.png">
+    <title>Tentore</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- INFO: Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- INFO: Icon CDN-->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <!--HEADER-->
+    <header>
+        <a href="#" class="logo">
+            <img src="assets/Tentore.png" alt="Tentore logo!" />
+        </a>
+
+        <nav class="navbar">
+            <ul class="navbar-links">
+                <li class="link">
+                    <a href="#" class="active">Home</a>
+                </li>
+
+                <li class="link">
+                    <a href="#">About</a>
+                </li>
+
+                <li class="link">
+                    <a href="#">Shop</a>
+                </li>
+
+                <li class="link">
+                    <a href="#">Blog</a>
+                </li>
+
+                <li class="link">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <ul class="icons">
+            <li>
+                <a href="">
+                    <i data-feather="search"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i data-feather="shopping-cart"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i data-feather="user"></i>
+                </a>
+            </li>
+
+            <li>
+                <div id="hamburger-menu" class="hamburger-menu">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                    <div class="line line-3"></div>
+                </div>
+            </li>
+        </ul>
+    </header>
+
+    <!-- INFO: HOME -->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, sed?</h4>
+            <h1>Provides a sturdy tent for you!</h1>
+            <button class="button explore-button" type="button">
+                <a href="">
+                    Explore
+                </a>
+            </button>
+        </div>
+            <div class="home-img">
+                <img src="./images/tent-3.png" alt="Tent image.">
+            </div>
+    </section>
+</body>
+
+<script src="index.js"></script>
+
+<script>
+    feather.replace();
+</script>
+
+</html>
