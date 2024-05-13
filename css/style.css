@@ -1,0 +1,184 @@
+:root {
+    /* INFO: COLORS */
+    --floral-white: #FEF8EF;
+    --azure-white: #dbe9f4;
+    --night-black: #0A130A;
+    --maize: #Fde74c80;
+    --forest-green: #029322;
+    --lime-green-1: #6AFD60;
+    --blue: #0B54D1;
+}
+
+body {
+    background: var(--floral-white);
+    /* height: 1200px; */
+}
+
+/* INFO: GLOBAL*/
+.button {
+    min-height: 4rem;
+    min-width: 8rem;
+    border: none;
+    background: transparent;
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+}
+
+/* INFO: HEADER*/
+
+header {
+    z-index: 1000;
+    padding: 1.7rem 11%;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header.active {
+    padding: 1.7rem 11%;
+
+    position: sticky;
+    background: var(--azure-white);
+}
+
+header a.logo {
+    width: 4.8rem;
+    height: 4.8rem;
+    aspect-ratio: 1/1;
+}
+
+header nav .navbar-links {
+    display: flex;
+    gap: 2.8rem;
+}
+
+@media only screen and (max-width: 720px) {
+    header nav .navbar-links {
+        display: none;
+    }
+}
+
+header nav .navbar-links .link a {
+    padding: .5rem 2rem;
+    transition: all 450ms ease-in;
+    border-radius: 50%;
+}
+
+header nav .navbar-links .link a:hover {
+    background: var(--azure-white);
+}
+
+header nav .navbar-links .link a.active {
+    background: var(--azure-white);
+}
+
+header .icons {
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+header .icons li a svg {
+    height: 2rem;
+    width: 1.6rem;
+
+}
+
+header .icons .hamburger-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 720px) {
+    header .icons .hamburger-menu {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: .2rem;
+        height: 1.1rem;
+        width: 2rem;
+    }
+}
+
+header .icons .hamburger-menu .line {
+    width: 100%;
+    height: .3rem;
+    background: var(--night-black);
+    transition-property: transform, transform-origin;
+    transition: 250ms ease-in-out;
+}
+
+header .icons .hamburger-menu.open .line-1 {
+    transform: rotate(45deg);
+    transform-origin: 5px 2px;
+}
+
+header .icons .hamburger-menu.open .line-2 {
+    opacity: 0;
+}
+
+header .icons .hamburger-menu.open .line-3 {
+    transform: rotate(-45deg);
+    transform-origin: 5px -.5px;
+}
+
+/* INFO: HOME */
+section {
+    padding-block: 10rem 9rem;
+    padding-inline: 11%;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--maize);
+    background-image: url("../assets/home-bg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1rem;
+}
+
+.home .home-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.home .home-text .explore-button {
+    width: 12rem;
+    padding-inline: 1.6rem;
+    background-image: linear-gradient(90deg, var(--forest-green), var(--lime-green-1) 110%);
+    transition: all 250ms ease-in;
+    transform-origin: left;
+    color: var(--floral-white);
+    font-weight: 500;
+    letter-spacing: .05rem;
+}
+
+.home .home-text .explore-button a {
+    height: 100%;
+}
+
+.home .home-text .explore-button:hover {
+    letter-spacing: .08rem;
+    padding-inline: 1.6rem;
+    opacity: 0.9;
+}
+
+.home .home-img img {
+    width: 100%;
+    height: auto;
+}
