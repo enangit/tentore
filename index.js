@@ -5,6 +5,6 @@ hamburgerMenu.addEventListener("click", function() {
     hamburgerMenu.classList.toggle("open")
 })
 
-/* window.addEventListener("scroll", function(){
-    header.classList.toggle("active", window.screenY > 0);
-}) */
+window.addEventListener("scroll", function(){
+    header.classList.toggle("sticky", window.scrollY > 0);
+})
