@@ -1,5 +1,6 @@
 const header = document.querySelector("header");
-const hamburgerMenu = document.querySelector("#hamburger-menu")
+const mobileNav = document.querySelector("#mobile-nav")
+const hamburgerMenu = document.querySelector("#hamburger-button")
 const sectionEls = document.querySelectorAll("section")
 
 const home_text = document.querySelector(".home-text")
@@ -14,6 +15,9 @@ const contact_form = document.querySelector(".contact-form")
 
 const nav_links = document.querySelectorAll(".link a")
 
+function isOverflown(element) {
+    return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+}
 
 nav_links.forEach(link => {
     link.addEventListener("click", () => {
@@ -28,9 +32,11 @@ nav_links.forEach(link => {
 })
 
 
-
+console.log(hamburgerMenu)
 hamburgerMenu.addEventListener("click", function() {
+    console.log("click")
     hamburgerMenu.classList.toggle("open")
+    mobileNav.classList.toggle("open")
 })
 
 const observer = new IntersectionObserver(observerCb, {
@@ -76,6 +82,11 @@ function checkActiveLink() {
 
 window.addEventListener("scroll", function(e) {
     header.classList.toggle("sticky", window.scrollY > 0);
+    mobileNav.classList.toggle("white", window.scrollY > 0);
+    if (mobileNav.classList.contains("open")) {
+        hamburgerMenu.classList.toggle("open")
+        mobileNav.classList.remove("open")
+    }
     checkActiveLink()
     observerFunction(els)
 })
