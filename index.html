@@ -27,7 +27,7 @@
             <img src="assets/Tentore1.png" alt="Tentore logo!" />
         </a>
 
-        <nav class="navbar">
+        <nav class="navbar" id="desktop-nav">
             <ul class="navbar-links">
                 <li class="link">
                     <a href="#home" class="active">Home</a>
@@ -67,7 +67,7 @@
                 </a>
             </li>
 
-            <li>
+            <li class="li-cart-icon">
                 <a href="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -77,6 +77,7 @@
                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                     </svg>
                 </a>
+                <span class="item-quantity">0</span>
             </li>
 
             <li>
@@ -91,13 +92,48 @@
             </li>
 
             <li>
-                <div id="hamburger-menu" class="hamburger-menu">
-                    <div class="line line-1"></div>
-                    <div class="line line-2"></div>
-                    <div class="line line-3"></div>
-                </div>
+                <button class="hamburger-button" id="hamburger-button" style="background: transparent;">
+                    <div id="hamburger-menu" class="hamburger-menu">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                    </div>
+                </button>
             </li>
+
         </ul>
+
+
+
+        <!-- INFO: mobile navigation  -->
+        <nav class="navbar" id="mobile-nav">
+
+            <ul class="navbar-links">
+                <li class="link">
+                    <a href="#home" class="active">Home</a>
+                </li>
+
+                <li class="link">
+                    <a href="#feature">Features</a>
+                </li>
+
+                <li class="link">
+                    <a href="#products">Products</a>
+                </li>
+
+                <li class="link">
+                    <a href="#advertisement">Advertisement</a>
+                </li>
+
+                <!-- <li class="link">
+                    <a href="#">Blog</a>
+                </li> -->
+
+                <li class="link">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <!-- INFO: HOME -->
@@ -348,18 +384,18 @@
 
     <!-- INFO: CONTACT -->
     <section class="contact" id="contact">
-            <div class="contact-text">
-                <h5>For more product updates.</h5>
-                <h3>Contact Us</h3>
+        <div class="contact-text">
+            <h5>For more product updates.</h5>
+            <h3>Contact Us</h3>
+        </div>
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Enter email..." />
+                <button class="button explore-button subscribe-button">
+                    Subscribe Now
+                </button>
             </div>
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="email" name="email" id="email" placeholder="Enter email..."/>
-                    <button class="button explore-button subscribe-button">
-                        Subscribe Now
-                    </button>
-                </div>
-            </form>
+        </form>
     </section>
 
     <!-- INFO: FOOTER -->
