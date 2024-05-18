@@ -178,7 +178,7 @@ header #mobile-nav {
     display: none;
 }
 
-header  .hamburger-button {
+header .hamburger-button {
     display: none;
 }
 
@@ -342,7 +342,6 @@ header  .hamburger-button {
 }
 
 .products-content {
-    border: 2px solid red;
     background: var(--blue-20);
     border-radius: .5rem;
     padding: 2rem;
@@ -400,7 +399,6 @@ header  .hamburger-button {
 .products-content .product-box .heart svg {
     position: absolute;
     content: "";
-    color: var(--red);
     top: .5rem;
     right: .5rem;
     display: inline-block;
@@ -411,11 +409,18 @@ header  .hamburger-button {
     transition: 250ms ease-in;
 }
 
-.products-content .product-box .heart svg:hover {
+.products-content .product-box .heart:hover svg {
     fill: var(--red);
     cursor: pointer;
     scale: 1.2;
-    color: var(--floral-white);
+}
+
+.products-content .product-box .heart.unfilled svg {
+    fill: transparent;
+}
+
+.products-content .product-box .heart.filled svg {
+    fill: var(--red);
 }
 
 .products-content .product-box .price {
@@ -567,6 +572,7 @@ footer {
 }
 
 footer .footer-nav {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, auto));
 
@@ -600,6 +606,7 @@ footer .footer-nav .nav-content ul li {
 
 footer .footer-nav .nav-content ul li a {
     display: flex;
+    align-items: center;
     width: fit-content;
     font-size: 1.4rem;
 
@@ -618,9 +625,9 @@ footer .footer-nav .nav-content ul li svg {
 }
 
 /* INFO: MEDIA QUERIES*/
-@media only screen and (max-width: 70em) {
+@media only screen and (max-width: 81.25em) {
     header nav .navbar-links {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     header .icons li a svg {
@@ -630,15 +637,41 @@ footer .footer-nav .nav-content ul li svg {
     header .icons .li-cart-icon>.item-quantity {
         font-size: 1.4rem;
     }
+
+    footer .footer-nav {
+        row-gap: 1rem;
+    }
+
+    footer .footer-nav .nav-content:nth-child(3),
+    footer .footer-nav .nav-content:nth-child(2) {
+        justify-self: start;
+    }
 }
 
 @media only screen and (max-width: 69.99em) {
-    body {
-        position: relative;
+    header nav .navbar-links {
+        gap: 1.8rem;
+        font-size: 1.2rem;
     }
 
-    header  #desktop-nav {
+    header nav .navbar-links .link a {
+        padding: .5rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 55.375em) {
+    section {
+        padding-block: 3rem 2rem;
+    }
+
+    body {
+        position: relative;
+        font-size: 1.4rem;
+    }
+
+    header #desktop-nav {
         display: none;
+        pointer-events: none;
     }
 
     header .icons {
@@ -677,7 +710,7 @@ footer .footer-nav .nav-content ul li svg {
         transform: translateX(0);
     }
 
-    header  .hamburger-button {
+    header .hamburger-button {
         z-index: 999;
         display: block;
         border: none;
@@ -685,7 +718,7 @@ footer .footer-nav .nav-content ul li svg {
         margin-inline-start: var(--spacing);
     }
 
-    header  .hamburger-menu {
+    header .hamburger-menu {
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -701,7 +734,7 @@ footer .footer-nav .nav-content ul li svg {
         flex-direction: column;
     }
 
-    header  .hamburger-menu .line {
+    header .hamburger-menu .line {
         width: 100%;
         height: .3rem;
         background: var(--night-black);
@@ -724,8 +757,139 @@ footer .footer-nav .nav-content ul li svg {
         transform-origin: 5px -.5px;
     }
 
+    /* INFO: HOME */
+    .home .home-text h4 {
+        font-size: 1.8rem;
+    }
 
+    .home .home-text h1 {
+        font-size: 3rem;
+    }
+
+    /* INFO: ADVERTISEMENT */
+    .advertisement {
+        grid-template-columns: 50% 50%;
+    }
+
+    .advertisement .ad-img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .advertisement .ad-text h3 {
+        font-size: 2.8rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-block-end: 2rem;
+    }
+
+    .advertisement .ad-text p {
+        margin-block-end: 1.8rem;
+    }
+
+    /* INFO: CONTACT */
+    .contact form .form-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .contact .contact-text h3 {
+        font-size: 2rem;
+    }
+
+    .contact .contact-text h5 {
+        font-size: 1.6rem;
+    }
 }
 
+@media only screen and (max-width: 30em) {
+    h2 {
+        --h2-font: 1.8rem;
+    }
+
+    .home {
+        justify-items: center;
+    }
+
+    .home-text {
+        grid-column: 1/-1;
+    }
+
+    .home-img {
+        display: none;
+    }
+
+    /* INFO: FEATURES */
+    .feature .feature-content {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, auto));
+        gap: 2rem;
+        margin-block-start: 4.2rem;
+
+        transition-property: transform, opacity;
+        transition-delay: 500ms;
+        transition: 450ms ease-in;
+    }
+
+    .feature .feature-content .row {
+        padding: 2rem .5rem;
+    }
+
+    .feature .feature-content .row .main-row .row-text h6 {
+        font-size: 1.2rem;
+        margin-block-end: .5rem;
+    }
+
+    .feature .feature-content .row .main-row .row-text h3 {
+        margin-block-end: 1rem;
+        font-size: 2rem;
+    }
+
+    .feature .feature-content .row .main-row .row-text .row-button {
+        margin-block-end: 1rem;
+    }
+
+    /* INFO: PRODUCTS */
+    .products-content {
+        grid-template-columns: repeat(auto-fit, minmax(100%, auto));
+    }
+
+    .products-content .product-box img {
+        width: 100%;
+        margin-block-end: .5rem;
+    }
+
+    /* INFO: ADVERTISEMENT */
+    .advertisement {
+        position: relative;
+        background: var(--lime-green-1-80);
+        display: grid;
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .advertisement .ad-img {
+        display: none;
+    }
+
+    /* INFO: CONTACT */
+
+    .contact {
+        align-items: center;
+        justify-content: center;
+    }
 
 
+    .contact-form .form-group input {
+        width: 100%;
+    }
+
+    footer .footer-nav .nav-content ul li a svg {
+        width: 1.4rem;
+    }
+}
