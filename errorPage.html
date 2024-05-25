@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/Tentore.png">
+    <title>Tentore</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- INFO: Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- INFO: Icon CDN-->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        :root {
+            /* INFO: COLORS */
+            --h2-font: 2rem;
+
+            /* INFO: COLORS */
+            --floral-white: #FEF8EF;
+            --azure-white: #dbe9f4;
+            --night-black: #0A130A;
+            --yellow: #Fde74c;
+            --forest-green: #029322;
+            --lime-green-1: #6AFD60;
+            --blue: #0B54D1;
+            --pumpkin: #F56A13;
+            --gray: #404F44;
+            --red: #DC160F;
+
+            --lime-green-1-80: #6AFD6080;
+            --yellow-80: #Fde74c80;
+            --yellow-20: #Fde74c40;
+            --blue-80: #0B54D140;
+            --azure-white-80: #dbe9f480;
+            --blue-20: #0B54D108;
+        }
+
+        .error-page {
+            height: 100vh;
+            width: 100%;
+            background: var(--yellow-80);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        a {
+            text-decoration: underline;
+            transition-property: color;
+            transition: 250ms ease-in;
+        }
+
+        a:hover {
+            color: var(--blue);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="error-page" id="error-page">
+        <h2>Sorry, this feature does not have a function yet! </h2>
+        <a href="/" id="go-back">
+            Go Back
+        </a>
+    </section>
+</body>
+
+<script>
+    const goBackButton = document.querySelector("#go-back")
+    const url = "file:///home/enan/personal/dev/tentore/index.html"
+    goBackButton.addEventListener("click", function () {
+        goBackButton.href = url
+    })
+    console.log(url)
+</script>
+
+</html>

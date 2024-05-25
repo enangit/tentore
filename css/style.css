@@ -758,6 +758,20 @@ footer .footer-nav .nav-content ul li svg {
     }
 
     /* INFO: HOME */
+    .home {
+        grid-template-columns: 1fr;
+        row-gap: 5rem;
+    }
+
+    .home .home-text {
+        align-self: end;
+
+    }
+
+    .home .home-img {
+        align-self: start;
+    }
+
     .home .home-text h4 {
         font-size: 1.8rem;
     }
@@ -812,6 +826,7 @@ footer .footer-nav .nav-content ul li svg {
 
     .home {
         justify-items: center;
+        background-size: 100% 60%;
     }
 
     .home-text {
